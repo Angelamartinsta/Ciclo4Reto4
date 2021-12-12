@@ -31,7 +31,7 @@ public class UserRepository {
     public boolean ExisteEmail(String email){
         Optional<User> usuario = userInterface.findByEmail(email);
          
-        return !usuario.isEmpty();
+        return usuario.isPresent();
     }
     
     public Optional<User> autenticarUser(String email, String password){
